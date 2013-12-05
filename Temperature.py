@@ -67,7 +67,7 @@ def moduleRun(am, gm, se, sam, lg, rc, errs):
         
         if temp < '79.00':
             sendArduinomessage(moduleName(), "heaton")
-        a
+        
         elif temp > '81.00':
             sendArduinomessage(moduleName(), "heatoff")
     
