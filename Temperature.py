@@ -66,10 +66,10 @@ def moduleRun(am, gm, se, sam, lg, rc, errs):
         sendArduinomessage(moduleName(),"temprequest")
         
         if temp < '79.00':
-        sendArduinomessage(moduleName(), "heaton")
+            sendArduinomessage(moduleName(), "heaton")
         
         elif temp > '81.00':
-        sendArduinomessage(moduleName(), "heatoff")
+            sendArduinomessage(moduleName(), "heatoff")
     
 #Returns the author of the module    
 def moduleAuthor():
