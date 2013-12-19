@@ -57,19 +57,28 @@ def moduleRun(am, gm, se, sam, lg, rc, errs):
     
     #Add your main loop code below
     while True:
+        sendArduinomessage(moduleName(),"temprequest")
         i = 0
         while i < incomingQueue.qsize():
             temp = incomingQueue.get()
-            log(moduleName(), "Temperature is: " + temp)
+            log(moduleName(), "Temperature is: " + mssg)
             incomingQueue.task_done()
             
-        sendArduinomessage(moduleName(),"temprequest")
+            f = open("/home/pi/temp.txt","a")
+            f.write(incomingQueue.get())
+            f.close
+            time.sleep(2)
+            
+
+ 
+ 
+ 
         
-        if temp < '79.00':
-            sendArduinomessage(moduleName(), "heaton")
+#        if temp < '79.00':
+#            sendArduinomessage(moduleName(), "heaton")
         
-        elif temp > '81.00':
-            sendArduinomessage(moduleName(), "heatoff")
+#        elif temp > '81.00':
+#            sendArduinomessage(moduleName(), "heatoff")
     
 #Returns the author of the module    
 def moduleAuthor():
